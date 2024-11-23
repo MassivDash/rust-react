@@ -21,7 +21,7 @@
     "@fontsource/pacifico": "^5.0.8",
     "astro": "^4.14.2",
     "axios": "^1.7.4",
-    "svelte": "^4.2.18",
+    "svelte": "^4.2.19",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
