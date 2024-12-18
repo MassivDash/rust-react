@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import SpaceX from '../components/spaceX/spacex.svelte'
 import Section from '../components/Section.astro'
 import AIcon from '../svgs/AstroIcon.astro'
+import { HelloWorld } from '@components/helloWorld/helloWorld.tsx'
 ---
 
 <Layout title='Welcome to Astro X'>
@@ -16,7 +17,9 @@ import AIcon from '../svgs/AstroIcon.astro'
     </div>
     <Section>
       <div class='container'>
-        <div class='info'></div>
+        <div class='info'>
+          <HelloWorld client:load />
+        </div>
         <div class='svelte-component'>
           <SpaceX client:load />
         </div>

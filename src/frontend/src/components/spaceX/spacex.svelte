@@ -40,7 +40,7 @@
   // It will render pages at the build time and then hydrate them on the client
 
   // For client side data fetching, we can use axios or others, but fetch does not fire up
-  import { axiosBackendInstance } from '../../axiosInstance/axiosBackendInstance.ts'
+  import { axiosBackendInstance } from '@axios/axiosBackendInstance.ts'
 
   const getSpaceXRockets = async () => {
     try {
@@ -55,6 +55,7 @@
   }
 
   let data: Rocket[] = []
+  let error: string | null = null
 
   onMount(async () => {
     const res = await getSpaceXRockets()

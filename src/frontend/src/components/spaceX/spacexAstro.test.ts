@@ -7,7 +7,7 @@ import ssr from '@astrojs/svelte/server.js'
 import SpaceX from './spacex.svelte'
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js'
 
-test('Astro Page', async () => {
+test('Svelte Island', async () => {
   const container = await AstroContainer.create()
   container.addServerRenderer({
     name: '@astrojs/svelte',

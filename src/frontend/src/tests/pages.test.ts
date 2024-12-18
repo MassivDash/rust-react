@@ -9,7 +9,7 @@ import AstroPage from '../pages/astro.astro'
 // @eslint-disable-next-line import/no-unresolved
 // @ts-expect-error wrong types, but this combo works
 import ssr from '@astrojs/svelte/server.js'
-
+import ssrReact from '@astrojs/react/server.js'
 test('Index Page', async () => {
   const container = await AstroContainer.create()
   const result = await container.renderToString(IndexPage)
@@ -45,6 +45,16 @@ test('Astro Page', async () => {
     name: '@astrojs/svelte',
     entrypoint: '@astrojs/svelte/client-v5.js'
   })
+
+  container.addServerRenderer({
+    name: '@astrojs/react',
+    renderer: ssrReact
+  })
+  container.addClientRenderer({
+    name: '@astrojs/react',
+    entrypoint: '@astrojs/react/client-v17.js'
+  })
+
   const result = await container.renderToString(AstroPage)
   expect(result).toContain('Astro framework frontend')
 })
